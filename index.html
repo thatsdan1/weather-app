@@ -37,14 +37,13 @@
         </div>
     </div>
 <script>
-const apiKey = "2b6310c80336e0a8cd3e849b5231d2e4";
-const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+const apiUrl = "https://your-serverless-function-url/weather?city=";
 const searchBox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
 const weatherIcon = document.querySelector(".weather-icon");
 
 async function checkWeather(city){
-    const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+    const response = await fetch(apiUrl + city);
     var data = await response.json();
 
     if (data.cod === "404") {
